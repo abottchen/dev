@@ -9,7 +9,7 @@ Puppet::Reports.register_report(:myreport) do
     Puppet.notice "METRICS: Process Puppet Report" 
     Puppet.notice "METRICS: self.logs.last.message: #{self.logs.last.message}" 
     self.metrics['time'].values.each { |val| 
-      Puppet.notice "METRICS: metrics.time.total: #{val[2]}" if val[0] == 'total' 
+      Puppet.notice "METRICS: #{val.to_s}" 
     } 
   end
 end
