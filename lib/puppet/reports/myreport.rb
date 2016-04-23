@@ -8,6 +8,7 @@ Puppet::Reports.register_report(:myreport) do
   def process
     Puppet.notice "METRICS: Process Puppet Report" 
     Puppet.notice "METRICS: self.logs.last.message: #{self.logs.last.message}" 
+    puts "METRICS:"
     self.metrics['time'].values.each { |val| 
       puts val.to_s
     } 
