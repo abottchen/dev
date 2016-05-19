@@ -1,0 +1,14 @@
+puppet_enterprise::profile::master::code_manager_auto_configure: true
+puppet_enterprise::master::code_manager::git_settings:
+  private-key: '/etc/control-repo-id'
+  repositories:
+    - remote: "git@github.com:abottchen/control-repo.git"
+      private-key: "/etc/control-repo-id"
+    - remote: "git@10.32.162.171:puppetlabs/burnside-project.git"
+      private-key: "/etc/second-repo-id"
+puppet_enterprise::master::code_manager::sources:
+    main:
+      remote: "git@github.com:abottchen/control-repo.git"
+    hiera:
+      prefix: true
+      remote: "git@10.32.162.171:puppetlabs/burnside-project.git"
